@@ -34,13 +34,14 @@ services:
       - key: LOG_LEVEL
         value: INFO
 
-  - type: worker
+  - type: web
     name: voice-medical-agent-worker
     plan: free
     env: docker
     dockerfilePath: ./app/Dockerfile
     dockerContext: .
-    dockerCommand: python -m app.realtime.webrtc_agent dev
+    dockerCommand: >-
+      sh -c "python -m http.server $PORT & python -m app.realtime.webrtc_agent dev"
     envVars:
       - key: GROQ_API_KEY
         sync: false
