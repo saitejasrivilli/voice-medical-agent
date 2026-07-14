@@ -40,8 +40,7 @@ services:
       - "7880:7880"   # signaling (WS)
       - "7881:7881"   # RTC TCP fallback
       - "50000-50100:50000-50100/udp"  # RTC media
-    environment:
-      - LIVEKIT_KEYS=devkey:secret
+    # --dev mode provides default devkey/secret credentials automatically
 
   voice-agent-worker:
     build: .

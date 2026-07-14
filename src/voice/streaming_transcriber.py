@@ -12,8 +12,10 @@ audio is transcribed once more for a final, high-accuracy transcript and
 handed to the rest of the assessment pipeline.
 """
 
+import array
 import io
 import logging
+import math
 import time
 import wave
 from dataclasses import dataclass, field
@@ -27,6 +29,26 @@ logger = logging.getLogger(__name__)
 SAMPLE_RATE = 16000
 SAMPLE_WIDTH = 2  # 16-bit PCM
 CHANNELS = 1
+
+# Below this RMS amplitude (16-bit PCM, max 32767), a frame is treated as
+# silence for turn-taking purposes. Needed because WebRTC tracks (LiveKit)
+# continuously emit frames - including silence - so "a frame arrived" can't
+# be used as a proxy for "the caller is still talking" the way it can for a
+# WebSocket client that simply stops sending bytes between utterances.
+SILENCE_RMS_THRESHOLD = 300
+
+
+def pcm16_rms(pcm_bytes: bytes) -> float:
+    """Root-mean-square amplitude of 16-bit signed PCM audio (0..32767)."""
+    if not pcm_bytes:
+        return 0.0
+    samples = array.array("h")
+    usable_len = len(pcm_bytes) - (len(pcm_bytes) % 2)
+    samples.frombytes(pcm_bytes[:usable_len])
+    if not samples:
+        return 0.0
+    sum_squares = sum(s * s for s in samples)
+    return math.sqrt(sum_squares / len(samples))
 
 
 def pcm16_to_wav_bytes(pcm_bytes: bytes) -> bytes:
@@ -65,7 +87,8 @@ class StreamingSession:
         """Feed raw PCM16 mono audio. Returns a partial transcript when a
         full rolling window has accumulated since the last one, else None."""
         self._buffer.extend(pcm_chunk)
-        self._last_audio_at = time.monotonic()
+        if pcm16_rms(pcm_chunk) >= SILENCE_RMS_THRESHOLD:
+            self._last_audio_at = time.monotonic()
 
         window_bytes = int(settings.stream_chunk_seconds * self._bytes_per_second)
         new_bytes = len(self._buffer) - self._last_partial_len
