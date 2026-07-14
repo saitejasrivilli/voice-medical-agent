@@ -49,6 +49,8 @@ services:
       context: .
       dockerfile: app/Dockerfile
     command: python -m app.realtime.webrtc_agent dev
+    healthcheck:
+      disable: true
     environment:
       - GROQ_API_KEY=${GROQ_API_KEY:-}
       - LIVEKIT_URL=ws://livekit:7880
