@@ -1,0 +1,12 @@
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+htmlcov/
+.coverage
+.git/
+.DS_Store
+*.db
+*.db-*
+data/medical_audio_dataset/
+.env
