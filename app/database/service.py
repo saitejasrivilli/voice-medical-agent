@@ -145,6 +145,12 @@ class AssessmentService:
             Assessment.audio_file_hash == audio_hash
         ).first() is not None
 
+    def get_by_audio_hash(self, audio_hash: str) -> Optional[Assessment]:
+        """Fetch the existing assessment for an already-processed audio file."""
+        return self.session.query(Assessment).filter(
+            Assessment.audio_file_hash == audio_hash
+        ).first()
+
 
 class AuditService:
     """Service for managing audit logs."""

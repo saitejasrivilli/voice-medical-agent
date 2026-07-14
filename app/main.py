@@ -18,7 +18,7 @@ from datetime import datetime
 import asyncio
 from sqlalchemy import text
 from app.config import settings
-from app.core.models import AssessmentOutput, HealthCheckResponse, ErrorResponse
+from app.core.models import AssessmentOutput, HealthCheckResponse, ErrorResponse, SymptomExtraction, RoutingDecision
 from app.database.models import init_db, Assessment as DBAssessment
 from app.database.service import AssessmentService, AuditService
 from app.services.transcriber import GroqTranscriber, MockTranscriber, TranscriptionError
@@ -197,7 +197,42 @@ async def assess_symptoms(
         
         # Read file
         audio_bytes = await file.read()
-        
+
+        # Skip reprocessing identical audio - return the existing result instead
+        import hashlib as _hashlib
+        file_hash = _hashlib.sha256(audio_bytes).hexdigest()
+        assessment_service = AssessmentService(db)
+        existing = assessment_service.get_by_audio_hash(file_hash)
+        if existing:
+            logger.info(f"Audio already assessed as {existing.id}, returning cached result", extra={
+                'request_id': request_id,
+            })
+            return AssessmentOutput(
+                id=existing.id,
+                created_at=existing.created_at,
+                transcription=existing.transcription,
+                symptoms=SymptomExtraction(
+                    symptoms=existing.symptoms,
+                    severity=existing.severity,
+                    duration_days=existing.duration_days,
+                    onset=existing.onset_type or "unknown",
+                    associated_symptoms=existing.associated_symptoms or [],
+                ),
+                routing=RoutingDecision(
+                    specialty=existing.specialty,
+                    confidence=existing.routing_confidence,
+                    reasoning=existing.escalation_reasoning or "Cached from prior identical audio",
+                    escalation_level=existing.escalation_level,
+                    requires_immediate_attention=existing.requires_immediate_attention,
+                ),
+                agent_questions=existing.agent_questions,
+                agent_recommendations=existing.agent_recommendations,
+                confidence_in_assessment=existing.overall_confidence,
+                processing_latency_ms=existing.total_latency_ms,
+                transcription_latency_ms=existing.transcription_latency_ms,
+                routing_latency_ms=existing.routing_latency_ms,
+            )
+
         # Stage 1: Transcription
         transcription_start = time.time()
         transcriber = get_transcriber()
@@ -266,15 +301,7 @@ async def assess_symptoms(
         
         # Stage 5: Storage
         storage_start = time.time()
-        assessment_service = AssessmentService(db)
-        
-        # Check for duplicate audio
-        from app.services.transcriber import GroqTranscriber as RealTranscriber
-    
-        # Actually use a proper hash
-        import hashlib
-        file_hash = hashlib.sha256(audio_bytes).hexdigest()
-        
+
         # Create assessment record
         db_assessment = assessment_service.create_assessment(
             audio_file_hash=file_hash,
