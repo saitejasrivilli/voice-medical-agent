@@ -4,9 +4,9 @@ Dermatology specialist agent - handles skin conditions, rashes, and lesions.
 
 import logging
 from typing import List
-from src.agents.base_agent import BaseAgent
-from src.core.models import SymptomExtraction, RoutingDecision
-from src.core.enums import EscalationLevel
+from app.agents.base_agent import BaseAgent
+from app.core.models import SymptomExtraction, RoutingDecision
+from app.core.enums import EscalationLevel
 
 logger = logging.getLogger(__name__)
 

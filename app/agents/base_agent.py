@@ -6,7 +6,7 @@ Provides common functionality for question generation and recommendation logic.
 import logging
 from abc import ABC, abstractmethod
 from typing import List, Optional
-from src.core.models import SymptomExtraction, RoutingDecision
+from app.core.models import SymptomExtraction, RoutingDecision
 
 logger = logging.getLogger(__name__)
 

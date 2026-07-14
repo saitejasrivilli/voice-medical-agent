@@ -2,7 +2,9 @@ version: '3.8'
 
 services:
   app:
-    build: .
+    build:
+      context: .
+      dockerfile: app/Dockerfile
     ports:
       - "8000:8000"
     environment:
@@ -15,7 +17,7 @@ services:
       - postgres
     volumes:
       - .:/app
-    command: python -m uvicorn src.api.main:app --host 0.0.0.0 --port 8000 --reload
+    command: python -m uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
 
   postgres:
     image: postgres:15-alpine
@@ -43,8 +45,10 @@ services:
     # --dev mode provides default devkey/secret credentials automatically
 
   voice-agent-worker:
-    build: .
-    command: python -m src.realtime.webrtc_agent dev
+    build:
+      context: .
+      dockerfile: app/Dockerfile
+    command: python -m app.realtime.webrtc_agent dev
     environment:
       - GROQ_API_KEY=${GROQ_API_KEY:-}
       - LIVEKIT_URL=ws://livekit:7880

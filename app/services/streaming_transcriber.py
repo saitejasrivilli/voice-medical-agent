@@ -21,8 +21,8 @@ import wave
 from dataclasses import dataclass, field
 from typing import Callable, Optional
 
-from src.config import settings
-from src.voice.transcriber import GroqTranscriber, TranscriptionError
+from app.config import settings
+from app.services.transcriber import GroqTranscriber, TranscriptionError
 
 logger = logging.getLogger(__name__)
 

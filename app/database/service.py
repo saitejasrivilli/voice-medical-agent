@@ -8,8 +8,8 @@ from datetime import datetime, timedelta
 from typing import Optional, List, Dict
 import json
 
-from src.database.models import Assessment, AuditLog, PerformanceMetrics
-from src.core.enums import Specialty, EscalationLevel
+from app.database.models import Assessment, AuditLog, PerformanceMetrics
+from app.core.enums import Specialty, EscalationLevel
 
 
 class AssessmentService:

@@ -2,11 +2,11 @@
 Specialty routing service - routes symptoms to appropriate medical specialty.
 Uses keyword matching with confidence scoring and specialty-specific escalation logic.
 """
-from src.core.enums import EscalationLevel, Specialty
+from app.core.enums import EscalationLevel, Specialty
 import logging
 from typing import List, Tuple
-from src.core.models import SymptomExtraction, RoutingDecision
-from src.core.enums import (
+from app.core.models import SymptomExtraction, RoutingDecision
+from app.core.enums import (
     Specialty, Severity, EscalationLevel, 
     SPECIALTY_KEYWORDS, CONFIDENCE_THRESHOLD,
     CARDIOLOGY_CRITICAL, ORTHOPEDICS_CRITICAL, DERMATOLOGY_CRITICAL
@@ -36,7 +36,9 @@ class SpecialtyRouter:
         import pickle
 
         # Load model
-        with open("specialty_router_model.pkl", "rb") as f:
+        import os
+        model_path = os.path.join(os.path.dirname(__file__), "..", "..", "data", "models", "specialty_router_model.pkl")
+        with open(model_path, "rb") as f:
             clf, vectorizer = pickle.load(f)
 
         # Prepare text

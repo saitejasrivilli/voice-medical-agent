@@ -7,7 +7,7 @@ Production-grade medical voice assessment system with specialty routing, LLM-bas
 - **Real Voice Integration**: Accepts audio uploads (.wav, .mp3, .webm) and transcribes using Groq Whisper API
 - **Real-time streaming pipeline**: `/ws/assess` WebSocket buffers live PCM16 audio into rolling windows, emits partial transcripts, and runs the full pipeline on end-of-utterance (see caveat below — Groq's Whisper API is batch, not token-streaming, so this is windowed re-transcription rather than true incremental ASR)
 - **Text-to-speech replies**: agent's follow-up questions/recommendations are synthesized to speech (`gTTS` free by default, `ElevenLabs` if `ELEVENLABS_API_KEY` is set) and streamed back over the WebSocket or LiveKit room
-- **WebRTC voice calls**: `src/realtime/webrtc_agent.py` is a LiveKit agent worker that joins a room, consumes a caller's live microphone track, and publishes the synthesized reply back as a real WebRTC audio track. LiveKit is self-hosted (open-source, free) via `docker-compose.yml` — no phone number required. This does **not** answer PSTN phone calls by itself; that needs a SIP trunk provider (e.g. Twilio, Telnyx) configured in front of LiveKit, which isn't wired up here.
+- **WebRTC voice calls**: `app/realtime/webrtc_agent.py` is a LiveKit agent worker that joins a room, consumes a caller's live microphone track, and publishes the synthesized reply back as a real WebRTC audio track. LiveKit is self-hosted (open-source, free) via `docker-compose.yml` — no phone number required. This does **not** answer PSTN phone calls by itself; that needs a SIP trunk provider (e.g. Twilio, Telnyx) configured in front of LiveKit, which isn't wired up here.
 - **Intelligent Symptom Extraction**: Uses LLM to extract structured medical information from transcriptions
 - **Specialty-Specific Routing**: Intelligently routes patients to appropriate medical specialty (Cardiology, Orthopedics, Dermatology, General Triage)
 - **Specialty-Specific Agents**: Each specialty has custom logic for follow-up questions and recommendations
@@ -34,12 +34,42 @@ User Audio Upload
 
 - **API Framework**: FastAPI
 - **Transcription**: Groq Whisper API
-- **LLM**: Groq Mixtral (for extraction)
+- **LLM**: Groq Llama 3.3 70B (for extraction)
 - **Database**: PostgreSQL (production) / SQLite (development)
 - **ORM**: SQLAlchemy
+- **Real-time**: WebSocket + LiveKit (self-hosted WebRTC)
 - **Container**: Docker
 - **Testing**: pytest
 - **Monitoring**: Structured JSON logging, metrics collection
+
+## Project Structure
+
+```
+voice-medical-agent/
+├── app/
+│   ├── main.py              # FastAPI entry: REST + WebSocket endpoints
+│   ├── config.py             # Settings (env-driven)
+│   ├── pipeline.py           # Shared extraction→routing→agent pipeline (REST/WS/WebRTC all call this)
+│   ├── Dockerfile
+│   ├── core/                 # Pydantic models + enums (Specialty, Severity, EscalationLevel)
+│   ├── services/              # Transcription (Groq Whisper), TTS (gTTS/ElevenLabs), streaming/VAD
+│   ├── agents/                 # Symptom extraction, specialty router + per-specialty clinical agents
+│   ├── realtime/               # LiveKit WebRTC agent worker
+│   ├── database/               # SQLAlchemy models + assessment/audit services
+│   └── observability/          # Structured logging + metrics
+├── data/
+│   ├── models/                # specialty_router_model.pkl
+│   ├── audio_samples/         # test .wav clips
+│   └── medical_audio_dataset/
+├── scripts/
+│   ├── integrate_model.py
+│   └── healthcheck.py
+├── tests/unit/
+├── docs/                      # ARCHITECTURE.md, API.md
+├── docker-compose.yml         # app + postgres + livekit + voice-agent-worker
+├── requirements.txt
+└── README.md
+```
 
 ## Quick Start
 
@@ -67,12 +97,12 @@ cp .env.example .env
 
 3. **Initialize database**:
 ```bash
-python -c "from src.database.models import init_db; from src.config import settings; init_db(settings.database_url)"
+python -c "from app.database.models import init_db; from app.config import settings; init_db(settings.database_url)"
 ```
 
 4. **Run server**:
 ```bash
-python -m uvicorn src.api.main:app --reload
+python -m uvicorn app.main:app --reload
 ```
 
 Server runs on `http://localhost:8000`
@@ -179,7 +209,7 @@ transcripts fill in, then `{"type": "final", ...}` plus a binary MP3 reply once
 
 ### WebRTC (LiveKit)
 `docker-compose up livekit voice-agent-worker` starts a self-hosted LiveKit server and
-the agent worker (`src/realtime/webrtc_agent.py`). Any LiveKit-compatible client
+the agent worker (`app/realtime/webrtc_agent.py`). Any LiveKit-compatible client
 (browser SDK, mobile SDK) can join the room and talk to the agent over real WebRTC.
 
 ## Configuration
@@ -313,7 +343,7 @@ All logs are JSON-formatted with:
 {
   "timestamp": "2024-01-15T10:30:00.123",
   "level": "INFO",
-  "logger": "src.api.main",
+  "logger": "app.main",
   "message": "Assessment completed successfully",
   "request_id": "uuid-123",
   "assessment_id": "uuid-456",

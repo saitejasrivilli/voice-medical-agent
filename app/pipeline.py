@@ -6,10 +6,10 @@ three entry points route through identical extraction/routing/agent logic.
 
 from dataclasses import dataclass
 
-from src.agents.symptom_extractor import LLMBasedExtractor
-from src.agents.specialty_router import SpecialtyRouter
-from src.agents.factory import AgentFactory
-from src.config import settings
+from app.agents.symptom_extractor import LLMBasedExtractor
+from app.agents.specialty_router import SpecialtyRouter
+from app.agents.factory import AgentFactory
+from app.config import settings
 
 
 @dataclass

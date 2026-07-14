@@ -10,14 +10,14 @@ from datetime import datetime
 # Add src to path
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 
-from src.core.models import SymptomExtraction, RoutingDecision
-from src.core.enums import Severity, Specialty, EscalationLevel
-from src.agents.symptom_extractor import MockExtractor
-from src.agents.specialty_router import MockRouter
-from src.agents.cardiology_agent import MockCardiologyAgent
-from src.agents.orthopedics_agent import MockOrthopedicsAgent
-from src.agents.dermatology_agent import MockDermatologyAgent
-from src.agents.triage_agent import MockGeneralTriageAgent
+from app.core.models import SymptomExtraction, RoutingDecision
+from app.core.enums import Severity, Specialty, EscalationLevel
+from app.agents.symptom_extractor import MockExtractor
+from app.agents.specialty_router import MockRouter
+from app.agents.cardiology_agent import MockCardiologyAgent
+from app.agents.orthopedics_agent import MockOrthopedicsAgent
+from app.agents.dermatology_agent import MockDermatologyAgent
+from app.agents.triage_agent import MockGeneralTriageAgent
 
 
 class TestSymptomExtraction:

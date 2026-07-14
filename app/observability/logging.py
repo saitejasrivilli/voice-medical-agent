@@ -11,7 +11,7 @@ from typing import Dict, Any, Optional
 from functools import wraps
 import uuid
 
-from src.config import settings
+from app.config import settings
 
 # Configure structured logging
 def setup_logging():

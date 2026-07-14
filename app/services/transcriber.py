@@ -7,7 +7,7 @@ import logging
 from typing import Optional
 import os
 import hashlib
-from src.config import settings
+from app.config import settings
 
 logger = logging.getLogger(__name__)
 

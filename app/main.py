@@ -17,18 +17,18 @@ from sqlalchemy.orm import sessionmaker
 from datetime import datetime
 import asyncio
 from sqlalchemy import text
-from src.config import settings
-from src.core.models import AssessmentOutput, HealthCheckResponse, ErrorResponse
-from src.database.models import init_db, Assessment as DBAssessment
-from src.database.service import AssessmentService, AuditService
-from src.voice.transcriber import GroqTranscriber, MockTranscriber, TranscriptionError
-from src.agents.symptom_extractor import LLMBasedExtractor, MockExtractor
-from src.agents.specialty_router import SpecialtyRouter, MockRouter
-from src.agents.factory import AgentFactory
-from src.observability.logging import setup_logging, metrics, generate_request_id
-from src.voice.synthesizer import get_synthesizer, SynthesisError
-from src.voice.streaming_transcriber import StreamingSession, StreamResult
-from src.pipeline import run_text_pipeline
+from app.config import settings
+from app.core.models import AssessmentOutput, HealthCheckResponse, ErrorResponse
+from app.database.models import init_db, Assessment as DBAssessment
+from app.database.service import AssessmentService, AuditService
+from app.services.transcriber import GroqTranscriber, MockTranscriber, TranscriptionError
+from app.agents.symptom_extractor import LLMBasedExtractor, MockExtractor
+from app.agents.specialty_router import SpecialtyRouter, MockRouter
+from app.agents.factory import AgentFactory
+from app.observability.logging import setup_logging, metrics, generate_request_id
+from app.services.synthesizer import get_synthesizer, SynthesisError
+from app.services.streaming_transcriber import StreamingSession, StreamResult
+from app.pipeline import run_text_pipeline
 
 # Setup logging
 logger = setup_logging()
@@ -132,7 +132,7 @@ async def health_check():
 @app.get("/metrics")
 async def get_metrics(db: Session = Depends(get_db)):
     """Get aggregated metrics."""
-    from src.database.service import MetricsService
+    from app.database.service import MetricsService
     
     metrics_service = MetricsService(db)
     latest_metrics = metrics_service.get_latest_metrics()
@@ -269,7 +269,7 @@ async def assess_symptoms(
         assessment_service = AssessmentService(db)
         
         # Check for duplicate audio
-        from src.voice.transcriber import GroqTranscriber as RealTranscriber
+        from app.services.transcriber import GroqTranscriber as RealTranscriber
     
         # Actually use a proper hash
         import hashlib

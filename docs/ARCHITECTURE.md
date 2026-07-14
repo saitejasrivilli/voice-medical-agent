@@ -32,7 +32,7 @@
 
 ### Component Breakdown
 
-#### 1. **Transcriber** (`src/voice/transcriber.py`)
+#### 1. **Transcriber** (`app/services/transcriber.py`)
 - **Purpose**: Convert audio to text
 - **Implementation**: Groq Whisper API
 - **Key Features**:
@@ -43,7 +43,7 @@
 - **Why Groq**: Free tier, good accuracy, fast latency
 - **Fallback**: MockTranscriber for testing without API calls
 
-#### 2. **Symptom Extractor** (`src/agents/symptom_extractor.py`)
+#### 2. **Symptom Extractor** (`app/agents/symptom_extractor.py`)
 - **Purpose**: Extract structured medical data from transcript
 - **Implementation**: LLM-based (Groq Mixtral) with keyword fallback
 - **Output**: `SymptomExtraction` with:
@@ -56,7 +56,7 @@
   - Validates output against constraints
 - **Why Two-Tier**: LLM better for medical language, keyword fallback for reliability
 
-#### 3. **Specialty Router** (`src/agents/specialty_router.py`)
+#### 3. **Specialty Router** (`app/agents/specialty_router.py`)
 - **Purpose**: Route to appropriate medical specialty
 - **Implementation**: Keyword matching with confidence scoring
 - **Logic**:
@@ -72,7 +72,7 @@
 - **Why Rules-Based**: Deterministic, debuggable, no false positives
 - **Why Not ML**: Would require labeled training data; rules sufficient for MVP
 
-#### 4. **Specialty Agents** (`src/agents/*_agent.py`)
+#### 4. **Specialty Agents** (`app/agents/*_agent.py`)
 - **Purpose**: Generate specialty-specific follow-up questions + recommendations
 - **Structure**: Base class + 4 specialty implementations
 - **Cardiology Agent**:
@@ -92,7 +92,7 @@
   - Routes to primary care for proper evaluation
 - **Why Specialty-Specific**: Ensures relevant follow-up, improves user experience
 
-#### 5. **Database Layer** (`src/database/`)
+#### 5. **Database Layer** (`app/database/`)
 - **Models** (`models.py`):
   - `Assessment`: Main assessment records
   - `AuditLog`: Compliance/debugging trail
@@ -103,7 +103,7 @@
   - `MetricsService`: Metric aggregation
 - **Why Layered**: Separates ORM from business logic, testable, maintainable
 
-#### 6. **API** (`src/api/main.py`)
+#### 6. **API** (`app/main.py`)
 - **Framework**: FastAPI (modern, fast, auto-docs)
 - **Endpoints**:
   - `POST /assess`: Main endpoint
@@ -117,7 +117,7 @@
   - Error handling: Graceful failures
 - **Why FastAPI**: Type safety, auto-validation, built-in OpenAPI docs, excellent performance
 
-#### 7. **Observability** (`src/observability/`)
+#### 7. **Observability** (`app/observability/`)
 - **Logging**: JSON structured logging with request tracking
 - **Metrics**: Per-stage latency, success rates, distributions
 - **Why Important**: Production debugging, monitoring, alerting
@@ -248,7 +248,7 @@ Benefits:
 ### Local Development
 ```bash
 # SQLite database, mock services or real Groq API
-python -m uvicorn src.api.main:app --reload
+python -m uvicorn app.main:app --reload
 ```
 
 ### Docker Local

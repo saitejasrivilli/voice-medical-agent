@@ -7,9 +7,9 @@ import logging
 import json
 import re
 from typing import Optional
-from src.core.models import SymptomExtraction
-from src.core.enums import Severity
-from src.config import settings
+from app.core.models import SymptomExtraction
+from app.core.enums import Severity
+from app.config import settings
 
 logger = logging.getLogger(__name__)
 

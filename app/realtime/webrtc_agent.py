@@ -11,7 +11,7 @@ it does not by itself answer PSTN phone calls (that needs a SIP trunk
 provider in front of LiveKit, e.g. Twilio or Telnyx, which is a config
 addition, not a code change, once a trunk is provisioned).
 
-Run with:  python -m src.realtime.webrtc_agent dev
+Run with:  python -m app.realtime.webrtc_agent dev
 """
 
 import asyncio
@@ -26,11 +26,11 @@ from livekit.agents import (
     cli,
 )
 
-from src.config import settings
-from src.voice.streaming_transcriber import StreamingSession
-from src.voice.synthesizer import get_synthesizer, SynthesisError
-from src.api.main import get_transcriber  # reuse the same Groq transcriber factory
-from src.pipeline import run_text_pipeline
+from app.config import settings
+from app.services.streaming_transcriber import StreamingSession
+from app.services.synthesizer import get_synthesizer, SynthesisError
+from app.main import get_transcriber  # reuse the same Groq transcriber factory
+from app.pipeline import run_text_pipeline
 
 logger = logging.getLogger(__name__)
 

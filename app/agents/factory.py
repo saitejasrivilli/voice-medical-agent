@@ -3,12 +3,12 @@ Agent factory - creates appropriate agent instance based on specialty.
 """
 
 import logging
-from src.core.enums import Specialty
-from src.agents.base_agent import BaseAgent
-from src.agents.cardiology_agent import CardiologyAgent, MockCardiologyAgent
-from src.agents.orthopedics_agent import OrthopedicsAgent, MockOrthopedicsAgent
-from src.agents.dermatology_agent import DermatologyAgent, MockDermatologyAgent
-from src.agents.triage_agent import GeneralTriageAgent, MockGeneralTriageAgent
+from app.core.enums import Specialty
+from app.agents.base_agent import BaseAgent
+from app.agents.cardiology_agent import CardiologyAgent, MockCardiologyAgent
+from app.agents.orthopedics_agent import OrthopedicsAgent, MockOrthopedicsAgent
+from app.agents.dermatology_agent import DermatologyAgent, MockDermatologyAgent
+from app.agents.triage_agent import GeneralTriageAgent, MockGeneralTriageAgent
 
 logger = logging.getLogger(__name__)
 

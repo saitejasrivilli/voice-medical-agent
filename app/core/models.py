@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field, field_validator
 from datetime import datetime
 from uuid import UUID
 from typing import Optional, List
-from src.core.enums import Severity, Specialty, EscalationLevel
+from app.core.enums import Severity, Specialty, EscalationLevel
 
 
 class SymptomExtraction(BaseModel):
