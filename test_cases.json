@@ -1,0 +1,50 @@
+[
+  {
+    "text": "I have severe chest pain and shortness of breath",
+    "expected_specialty": "cardiology",
+    "expected_escalation": "ER",
+    "filename": "chest_pain.wav"
+  },
+  {
+    "text": "My knee is swollen and painful after I fell yesterday",
+    "expected_specialty": "orthopedics",
+    "expected_escalation": "office",
+    "filename": "knee_injury.wav"
+  },
+  {
+    "text": "There is a red rash on my arm that is itchy and spreading for three weeks",
+    "expected_specialty": "dermatology",
+    "expected_escalation": "office",
+    "filename": "rash.wav"
+  },
+  {
+    "text": "I have high fever of 102 degrees, severe cough, and body aches",
+    "expected_specialty": "general_triage",
+    "expected_escalation": "urgent_office",
+    "filename": "fever.wav"
+  },
+  {
+    "text": "My heart is racing and I feel dizzy and lightheaded",
+    "expected_specialty": "cardiology",
+    "expected_escalation": "urgent_office",
+    "filename": "palpitations.wav"
+  },
+  {
+    "text": "My ankle is severely swollen and I cannot put any weight on it",
+    "expected_specialty": "orthopedics",
+    "expected_escalation": "urgent_office",
+    "filename": "ankle_sprain.wav"
+  },
+  {
+    "text": "I have acne breakouts all over my face and back",
+    "expected_specialty": "dermatology",
+    "expected_escalation": "office",
+    "filename": "acne.wav"
+  },
+  {
+    "text": "I feel tired, weak, and have no energy to do anything",
+    "expected_specialty": "general_triage",
+    "expected_escalation": "office",
+    "filename": "fatigue.wav"
+  }
+]

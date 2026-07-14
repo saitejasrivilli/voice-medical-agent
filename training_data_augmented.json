@@ -1,0 +1,2144 @@
+[
+  {
+    "text": "I have chest pain",
+    "specialty": "cardiology",
+    "severity": "medium",
+    "escalation": "ER"
+  },
+  {
+    "text": "I am experiencing chest pain and it's affecting my daily life",
+    "specialty": "cardiology",
+    "severity": "medium",
+    "escalation": "ER"
+  },
+  {
+    "text": "I have been having chest pain for the past few days",
+    "specialty": "cardiology",
+    "severity": "medium",
+    "escalation": "ER"
+  },
+  {
+    "text": "I have palpitations",
+    "specialty": "cardiology",
+    "severity": "high",
+    "escalation": "ER"
+  },
+  {
+    "text": "I am experiencing palpitations and it's affecting my daily life",
+    "specialty": "cardiology",
+    "severity": "high",
+    "escalation": "ER"
+  },
+  {
+    "text": "I have been having palpitations for the past few days",
+    "specialty": "cardiology",
+    "severity": "medium",
+    "escalation": "ER"
+  },
+  {
+    "text": "I have shortness of breath",
+    "specialty": "cardiology",
+    "severity": "medium",
+    "escalation": "ER"
+  },
+  {
+    "text": "I am experiencing shortness of breath and it's affecting my daily life",
+    "specialty": "cardiology",
+    "severity": "high",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "I have been having shortness of breath for the past few days",
+    "specialty": "cardiology",
+    "severity": "high",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "I have dizziness",
+    "specialty": "cardiology",
+    "severity": "high",
+    "escalation": "ER"
+  },
+  {
+    "text": "I am experiencing dizziness and it's affecting my daily life",
+    "specialty": "cardiology",
+    "severity": "high",
+    "escalation": "ER"
+  },
+  {
+    "text": "I have been having dizziness for the past few days",
+    "specialty": "cardiology",
+    "severity": "high",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "I have fatigue",
+    "specialty": "cardiology",
+    "severity": "medium",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "I am experiencing fatigue and it's affecting my daily life",
+    "specialty": "cardiology",
+    "severity": "high",
+    "escalation": "ER"
+  },
+  {
+    "text": "I have been having fatigue for the past few days",
+    "specialty": "cardiology",
+    "severity": "high",
+    "escalation": "ER"
+  },
+  {
+    "text": "I have irregular heartbeat",
+    "specialty": "cardiology",
+    "severity": "medium",
+    "escalation": "ER"
+  },
+  {
+    "text": "I am experiencing irregular heartbeat and it's affecting my daily life",
+    "specialty": "cardiology",
+    "severity": "medium",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "I have been having irregular heartbeat for the past few days",
+    "specialty": "cardiology",
+    "severity": "high",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "I have pressure in chest",
+    "specialty": "cardiology",
+    "severity": "medium",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "I am experiencing pressure in chest and it's affecting my daily life",
+    "specialty": "cardiology",
+    "severity": "medium",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "I have been having pressure in chest for the past few days",
+    "specialty": "cardiology",
+    "severity": "high",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "I have swelling",
+    "specialty": "orthopedics",
+    "severity": "low",
+    "escalation": "office"
+  },
+  {
+    "text": "I am experiencing swelling and it's affecting my daily life",
+    "specialty": "orthopedics",
+    "severity": "medium",
+    "escalation": "office"
+  },
+  {
+    "text": "I have been having swelling for the past few days",
+    "specialty": "orthopedics",
+    "severity": "medium",
+    "escalation": "office"
+  },
+  {
+    "text": "I have fracture",
+    "specialty": "orthopedics",
+    "severity": "medium",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "I am experiencing fracture and it's affecting my daily life",
+    "specialty": "orthopedics",
+    "severity": "low",
+    "escalation": "office"
+  },
+  {
+    "text": "I have been having fracture for the past few days",
+    "specialty": "orthopedics",
+    "severity": "medium",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "I have joint pain",
+    "specialty": "orthopedics",
+    "severity": "medium",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "I am experiencing joint pain and it's affecting my daily life",
+    "specialty": "orthopedics",
+    "severity": "medium",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "I have been having joint pain for the past few days",
+    "specialty": "orthopedics",
+    "severity": "low",
+    "escalation": "office"
+  },
+  {
+    "text": "I have inability to move",
+    "specialty": "orthopedics",
+    "severity": "medium",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "I am experiencing inability to move and it's affecting my daily life",
+    "specialty": "orthopedics",
+    "severity": "medium",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "I have been having inability to move for the past few days",
+    "specialty": "orthopedics",
+    "severity": "low",
+    "escalation": "office"
+  },
+  {
+    "text": "I have bruising",
+    "specialty": "orthopedics",
+    "severity": "low",
+    "escalation": "office"
+  },
+  {
+    "text": "I am experiencing bruising and it's affecting my daily life",
+    "specialty": "orthopedics",
+    "severity": "medium",
+    "escalation": "office"
+  },
+  {
+    "text": "I have been having bruising for the past few days",
+    "specialty": "orthopedics",
+    "severity": "medium",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "I have sprain",
+    "specialty": "orthopedics",
+    "severity": "low",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "I am experiencing sprain and it's affecting my daily life",
+    "specialty": "orthopedics",
+    "severity": "medium",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "I have been having sprain for the past few days",
+    "specialty": "orthopedics",
+    "severity": "medium",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "I have severe knee pain",
+    "specialty": "orthopedics",
+    "severity": "medium",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "I am experiencing severe knee pain and it's affecting my daily life",
+    "specialty": "orthopedics",
+    "severity": "low",
+    "escalation": "office"
+  },
+  {
+    "text": "I have been having severe knee pain for the past few days",
+    "specialty": "orthopedics",
+    "severity": "medium",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "I have rash",
+    "specialty": "dermatology",
+    "severity": "medium",
+    "escalation": "office"
+  },
+  {
+    "text": "I am experiencing rash and it's affecting my daily life",
+    "specialty": "dermatology",
+    "severity": "low",
+    "escalation": "office"
+  },
+  {
+    "text": "I have been having rash for the past few days",
+    "specialty": "dermatology",
+    "severity": "low",
+    "escalation": "office"
+  },
+  {
+    "text": "I have itching",
+    "specialty": "dermatology",
+    "severity": "low",
+    "escalation": "office"
+  },
+  {
+    "text": "I am experiencing itching and it's affecting my daily life",
+    "specialty": "dermatology",
+    "severity": "medium",
+    "escalation": "office"
+  },
+  {
+    "text": "I have been having itching for the past few days",
+    "specialty": "dermatology",
+    "severity": "medium",
+    "escalation": "office"
+  },
+  {
+    "text": "I have lesion",
+    "specialty": "dermatology",
+    "severity": "medium",
+    "escalation": "office"
+  },
+  {
+    "text": "I am experiencing lesion and it's affecting my daily life",
+    "specialty": "dermatology",
+    "severity": "low",
+    "escalation": "office"
+  },
+  {
+    "text": "I have been having lesion for the past few days",
+    "specialty": "dermatology",
+    "severity": "low",
+    "escalation": "office"
+  },
+  {
+    "text": "I have skin discoloration",
+    "specialty": "dermatology",
+    "severity": "medium",
+    "escalation": "office"
+  },
+  {
+    "text": "I am experiencing skin discoloration and it's affecting my daily life",
+    "specialty": "dermatology",
+    "severity": "low",
+    "escalation": "office"
+  },
+  {
+    "text": "I have been having skin discoloration for the past few days",
+    "specialty": "dermatology",
+    "severity": "medium",
+    "escalation": "office"
+  },
+  {
+    "text": "I have burning sensation",
+    "specialty": "dermatology",
+    "severity": "low",
+    "escalation": "office"
+  },
+  {
+    "text": "I am experiencing burning sensation and it's affecting my daily life",
+    "specialty": "dermatology",
+    "severity": "low",
+    "escalation": "office"
+  },
+  {
+    "text": "I have been having burning sensation for the past few days",
+    "specialty": "dermatology",
+    "severity": "low",
+    "escalation": "office"
+  },
+  {
+    "text": "I have hives",
+    "specialty": "dermatology",
+    "severity": "low",
+    "escalation": "office"
+  },
+  {
+    "text": "I am experiencing hives and it's affecting my daily life",
+    "specialty": "dermatology",
+    "severity": "low",
+    "escalation": "office"
+  },
+  {
+    "text": "I have been having hives for the past few days",
+    "specialty": "dermatology",
+    "severity": "low",
+    "escalation": "office"
+  },
+  {
+    "text": "I have eczema",
+    "specialty": "dermatology",
+    "severity": "low",
+    "escalation": "office"
+  },
+  {
+    "text": "I am experiencing eczema and it's affecting my daily life",
+    "specialty": "dermatology",
+    "severity": "medium",
+    "escalation": "office"
+  },
+  {
+    "text": "I have been having eczema for the past few days",
+    "specialty": "dermatology",
+    "severity": "low",
+    "escalation": "office"
+  },
+  {
+    "text": "I have fever",
+    "specialty": "general_triage",
+    "severity": "medium",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "I am experiencing fever and it's affecting my daily life",
+    "specialty": "general_triage",
+    "severity": "low",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "I have been having fever for the past few days",
+    "specialty": "general_triage",
+    "severity": "medium",
+    "escalation": "office"
+  },
+  {
+    "text": "I have cough",
+    "specialty": "general_triage",
+    "severity": "medium",
+    "escalation": "office"
+  },
+  {
+    "text": "I am experiencing cough and it's affecting my daily life",
+    "specialty": "general_triage",
+    "severity": "medium",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "I have been having cough for the past few days",
+    "specialty": "general_triage",
+    "severity": "medium",
+    "escalation": "office"
+  },
+  {
+    "text": "I have body aches",
+    "specialty": "general_triage",
+    "severity": "low",
+    "escalation": "office"
+  },
+  {
+    "text": "I am experiencing body aches and it's affecting my daily life",
+    "specialty": "general_triage",
+    "severity": "low",
+    "escalation": "office"
+  },
+  {
+    "text": "I have been having body aches for the past few days",
+    "specialty": "general_triage",
+    "severity": "medium",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "I have headache",
+    "specialty": "general_triage",
+    "severity": "medium",
+    "escalation": "office"
+  },
+  {
+    "text": "I am experiencing headache and it's affecting my daily life",
+    "specialty": "general_triage",
+    "severity": "low",
+    "escalation": "office"
+  },
+  {
+    "text": "I have been having headache for the past few days",
+    "specialty": "general_triage",
+    "severity": "low",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "I have nausea",
+    "specialty": "general_triage",
+    "severity": "medium",
+    "escalation": "office"
+  },
+  {
+    "text": "I am experiencing nausea and it's affecting my daily life",
+    "specialty": "general_triage",
+    "severity": "medium",
+    "escalation": "office"
+  },
+  {
+    "text": "I have been having nausea for the past few days",
+    "specialty": "general_triage",
+    "severity": "medium",
+    "escalation": "office"
+  },
+  {
+    "text": "I have fatigue",
+    "specialty": "general_triage",
+    "severity": "low",
+    "escalation": "office"
+  },
+  {
+    "text": "I am experiencing fatigue and it's affecting my daily life",
+    "specialty": "general_triage",
+    "severity": "medium",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "I have been having fatigue for the past few days",
+    "specialty": "general_triage",
+    "severity": "low",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "I have loss of appetite",
+    "specialty": "general_triage",
+    "severity": "low",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "I am experiencing loss of appetite and it's affecting my daily life",
+    "specialty": "general_triage",
+    "severity": "low",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "I have been having loss of appetite for the past few days",
+    "specialty": "general_triage",
+    "severity": "low",
+    "escalation": "office"
+  },
+  {
+    "text": "I've been experiencing chest pain since yesterday",
+    "specialty": "cardiology",
+    "severity": "moderate",
+    "escalation": "ER"
+  },
+  {
+    "text": "The chest pain is getting worse",
+    "specialty": "cardiology",
+    "severity": "mild",
+    "escalation": "ER"
+  },
+  {
+    "text": "I woke up with chest pain",
+    "specialty": "cardiology",
+    "severity": "severe",
+    "escalation": "ER"
+  },
+  {
+    "text": "chest pain started after exercise",
+    "specialty": "cardiology",
+    "severity": "moderate",
+    "escalation": "ER"
+  },
+  {
+    "text": "I've been experiencing chest pain and it's affecting my daily life since yesterday",
+    "specialty": "cardiology",
+    "severity": "moderate",
+    "escalation": "ER"
+  },
+  {
+    "text": "The chest pain and it's affecting my daily life is getting worse",
+    "specialty": "cardiology",
+    "severity": "mild",
+    "escalation": "ER"
+  },
+  {
+    "text": "I woke up with chest pain and it's affecting my daily life",
+    "specialty": "cardiology",
+    "severity": "severe",
+    "escalation": "ER"
+  },
+  {
+    "text": "chest pain and it's affecting my daily life started after exercise",
+    "specialty": "cardiology",
+    "severity": "moderate",
+    "escalation": "ER"
+  },
+  {
+    "text": "I've been experiencing been having chest pain for the past few days since yesterday",
+    "specialty": "cardiology",
+    "severity": "mild",
+    "escalation": "ER"
+  },
+  {
+    "text": "The been having chest pain for the past few days is getting worse",
+    "specialty": "cardiology",
+    "severity": "severe",
+    "escalation": "ER"
+  },
+  {
+    "text": "I woke up with been having chest pain for the past few days",
+    "specialty": "cardiology",
+    "severity": "moderate",
+    "escalation": "ER"
+  },
+  {
+    "text": "been having chest pain for the past few days started after exercise",
+    "specialty": "cardiology",
+    "severity": "moderate",
+    "escalation": "ER"
+  },
+  {
+    "text": "I've been experiencing palpitations since yesterday",
+    "specialty": "cardiology",
+    "severity": "severe",
+    "escalation": "ER"
+  },
+  {
+    "text": "The palpitations is getting worse",
+    "specialty": "cardiology",
+    "severity": "moderate",
+    "escalation": "ER"
+  },
+  {
+    "text": "I woke up with palpitations",
+    "specialty": "cardiology",
+    "severity": "mild",
+    "escalation": "ER"
+  },
+  {
+    "text": "palpitations started after exercise",
+    "specialty": "cardiology",
+    "severity": "moderate",
+    "escalation": "ER"
+  },
+  {
+    "text": "I've been experiencing palpitations and it's affecting my daily life since yesterday",
+    "specialty": "cardiology",
+    "severity": "mild",
+    "escalation": "ER"
+  },
+  {
+    "text": "The palpitations and it's affecting my daily life is getting worse",
+    "specialty": "cardiology",
+    "severity": "severe",
+    "escalation": "ER"
+  },
+  {
+    "text": "I woke up with palpitations and it's affecting my daily life",
+    "specialty": "cardiology",
+    "severity": "severe",
+    "escalation": "ER"
+  },
+  {
+    "text": "palpitations and it's affecting my daily life started after exercise",
+    "specialty": "cardiology",
+    "severity": "mild",
+    "escalation": "ER"
+  },
+  {
+    "text": "I've been experiencing been having palpitations for the past few days since yesterday",
+    "specialty": "cardiology",
+    "severity": "mild",
+    "escalation": "ER"
+  },
+  {
+    "text": "The been having palpitations for the past few days is getting worse",
+    "specialty": "cardiology",
+    "severity": "moderate",
+    "escalation": "ER"
+  },
+  {
+    "text": "I woke up with been having palpitations for the past few days",
+    "specialty": "cardiology",
+    "severity": "mild",
+    "escalation": "ER"
+  },
+  {
+    "text": "been having palpitations for the past few days started after exercise",
+    "specialty": "cardiology",
+    "severity": "moderate",
+    "escalation": "ER"
+  },
+  {
+    "text": "I've been experiencing shortness of breath since yesterday",
+    "specialty": "cardiology",
+    "severity": "mild",
+    "escalation": "ER"
+  },
+  {
+    "text": "The shortness of breath is getting worse",
+    "specialty": "cardiology",
+    "severity": "moderate",
+    "escalation": "ER"
+  },
+  {
+    "text": "I woke up with shortness of breath",
+    "specialty": "cardiology",
+    "severity": "severe",
+    "escalation": "ER"
+  },
+  {
+    "text": "shortness of breath started after exercise",
+    "specialty": "cardiology",
+    "severity": "severe",
+    "escalation": "ER"
+  },
+  {
+    "text": "I've been experiencing shortness of breath and it's affecting my daily life since yesterday",
+    "specialty": "cardiology",
+    "severity": "severe",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "The shortness of breath and it's affecting my daily life is getting worse",
+    "specialty": "cardiology",
+    "severity": "moderate",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "I woke up with shortness of breath and it's affecting my daily life",
+    "specialty": "cardiology",
+    "severity": "mild",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "shortness of breath and it's affecting my daily life started after exercise",
+    "specialty": "cardiology",
+    "severity": "severe",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "I've been experiencing been having shortness of breath for the past few days since yesterday",
+    "specialty": "cardiology",
+    "severity": "severe",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "The been having shortness of breath for the past few days is getting worse",
+    "specialty": "cardiology",
+    "severity": "mild",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "I woke up with been having shortness of breath for the past few days",
+    "specialty": "cardiology",
+    "severity": "severe",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "been having shortness of breath for the past few days started after exercise",
+    "specialty": "cardiology",
+    "severity": "moderate",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "I've been experiencing dizziness since yesterday",
+    "specialty": "cardiology",
+    "severity": "mild",
+    "escalation": "ER"
+  },
+  {
+    "text": "The dizziness is getting worse",
+    "specialty": "cardiology",
+    "severity": "severe",
+    "escalation": "ER"
+  },
+  {
+    "text": "I woke up with dizziness",
+    "specialty": "cardiology",
+    "severity": "mild",
+    "escalation": "ER"
+  },
+  {
+    "text": "dizziness started after exercise",
+    "specialty": "cardiology",
+    "severity": "severe",
+    "escalation": "ER"
+  },
+  {
+    "text": "I've been experiencing dizziness and it's affecting my daily life since yesterday",
+    "specialty": "cardiology",
+    "severity": "moderate",
+    "escalation": "ER"
+  },
+  {
+    "text": "The dizziness and it's affecting my daily life is getting worse",
+    "specialty": "cardiology",
+    "severity": "severe",
+    "escalation": "ER"
+  },
+  {
+    "text": "I woke up with dizziness and it's affecting my daily life",
+    "specialty": "cardiology",
+    "severity": "severe",
+    "escalation": "ER"
+  },
+  {
+    "text": "dizziness and it's affecting my daily life started after exercise",
+    "specialty": "cardiology",
+    "severity": "severe",
+    "escalation": "ER"
+  },
+  {
+    "text": "I've been experiencing been having dizziness for the past few days since yesterday",
+    "specialty": "cardiology",
+    "severity": "severe",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "The been having dizziness for the past few days is getting worse",
+    "specialty": "cardiology",
+    "severity": "mild",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "I woke up with been having dizziness for the past few days",
+    "specialty": "cardiology",
+    "severity": "moderate",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "been having dizziness for the past few days started after exercise",
+    "specialty": "cardiology",
+    "severity": "mild",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "I've been experiencing fatigue since yesterday",
+    "specialty": "cardiology",
+    "severity": "severe",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "The fatigue is getting worse",
+    "specialty": "cardiology",
+    "severity": "moderate",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "I woke up with fatigue",
+    "specialty": "cardiology",
+    "severity": "severe",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "fatigue started after exercise",
+    "specialty": "cardiology",
+    "severity": "moderate",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "I've been experiencing fatigue and it's affecting my daily life since yesterday",
+    "specialty": "cardiology",
+    "severity": "moderate",
+    "escalation": "ER"
+  },
+  {
+    "text": "The fatigue and it's affecting my daily life is getting worse",
+    "specialty": "cardiology",
+    "severity": "mild",
+    "escalation": "ER"
+  },
+  {
+    "text": "I woke up with fatigue and it's affecting my daily life",
+    "specialty": "cardiology",
+    "severity": "severe",
+    "escalation": "ER"
+  },
+  {
+    "text": "fatigue and it's affecting my daily life started after exercise",
+    "specialty": "cardiology",
+    "severity": "severe",
+    "escalation": "ER"
+  },
+  {
+    "text": "I've been experiencing been having fatigue for the past few days since yesterday",
+    "specialty": "cardiology",
+    "severity": "mild",
+    "escalation": "ER"
+  },
+  {
+    "text": "The been having fatigue for the past few days is getting worse",
+    "specialty": "cardiology",
+    "severity": "moderate",
+    "escalation": "ER"
+  },
+  {
+    "text": "I woke up with been having fatigue for the past few days",
+    "specialty": "cardiology",
+    "severity": "moderate",
+    "escalation": "ER"
+  },
+  {
+    "text": "been having fatigue for the past few days started after exercise",
+    "specialty": "cardiology",
+    "severity": "severe",
+    "escalation": "ER"
+  },
+  {
+    "text": "I've been experiencing irregular heartbeat since yesterday",
+    "specialty": "cardiology",
+    "severity": "severe",
+    "escalation": "ER"
+  },
+  {
+    "text": "The irregular heartbeat is getting worse",
+    "specialty": "cardiology",
+    "severity": "severe",
+    "escalation": "ER"
+  },
+  {
+    "text": "I woke up with irregular heartbeat",
+    "specialty": "cardiology",
+    "severity": "moderate",
+    "escalation": "ER"
+  },
+  {
+    "text": "irregular heartbeat started after exercise",
+    "specialty": "cardiology",
+    "severity": "severe",
+    "escalation": "ER"
+  },
+  {
+    "text": "I've been experiencing irregular heartbeat and it's affecting my daily life since yesterday",
+    "specialty": "cardiology",
+    "severity": "severe",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "The irregular heartbeat and it's affecting my daily life is getting worse",
+    "specialty": "cardiology",
+    "severity": "moderate",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "I woke up with irregular heartbeat and it's affecting my daily life",
+    "specialty": "cardiology",
+    "severity": "mild",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "irregular heartbeat and it's affecting my daily life started after exercise",
+    "specialty": "cardiology",
+    "severity": "moderate",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "I've been experiencing been having irregular heartbeat for the past few days since yesterday",
+    "specialty": "cardiology",
+    "severity": "severe",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "The been having irregular heartbeat for the past few days is getting worse",
+    "specialty": "cardiology",
+    "severity": "moderate",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "I woke up with been having irregular heartbeat for the past few days",
+    "specialty": "cardiology",
+    "severity": "moderate",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "been having irregular heartbeat for the past few days started after exercise",
+    "specialty": "cardiology",
+    "severity": "moderate",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "I've been experiencing pressure in chest since yesterday",
+    "specialty": "cardiology",
+    "severity": "moderate",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "The pressure in chest is getting worse",
+    "specialty": "cardiology",
+    "severity": "mild",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "I woke up with pressure in chest",
+    "specialty": "cardiology",
+    "severity": "severe",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "pressure in chest started after exercise",
+    "specialty": "cardiology",
+    "severity": "moderate",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "I've been experiencing pressure in chest and it's affecting my daily life since yesterday",
+    "specialty": "cardiology",
+    "severity": "moderate",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "The pressure in chest and it's affecting my daily life is getting worse",
+    "specialty": "cardiology",
+    "severity": "severe",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "I woke up with pressure in chest and it's affecting my daily life",
+    "specialty": "cardiology",
+    "severity": "severe",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "pressure in chest and it's affecting my daily life started after exercise",
+    "specialty": "cardiology",
+    "severity": "moderate",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "I've been experiencing been having pressure in chest for the past few days since yesterday",
+    "specialty": "cardiology",
+    "severity": "mild",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "The been having pressure in chest for the past few days is getting worse",
+    "specialty": "cardiology",
+    "severity": "moderate",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "I woke up with been having pressure in chest for the past few days",
+    "specialty": "cardiology",
+    "severity": "mild",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "been having pressure in chest for the past few days started after exercise",
+    "specialty": "cardiology",
+    "severity": "mild",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "I injured myself and now have swelling",
+    "specialty": "orthopedics",
+    "severity": "moderate",
+    "escalation": "office"
+  },
+  {
+    "text": "My swelling won't go away",
+    "specialty": "orthopedics",
+    "severity": "severe",
+    "escalation": "office"
+  },
+  {
+    "text": "The swelling is limiting my movement",
+    "specialty": "orthopedics",
+    "severity": "moderate",
+    "escalation": "office"
+  },
+  {
+    "text": "I injured myself and now have swelling and it's affecting my daily life",
+    "specialty": "orthopedics",
+    "severity": "mild",
+    "escalation": "office"
+  },
+  {
+    "text": "My swelling and it's affecting my daily life won't go away",
+    "specialty": "orthopedics",
+    "severity": "mild",
+    "escalation": "office"
+  },
+  {
+    "text": "The swelling and it's affecting my daily life is limiting my movement",
+    "specialty": "orthopedics",
+    "severity": "moderate",
+    "escalation": "office"
+  },
+  {
+    "text": "I injured myself and now have been having swelling for the past few days",
+    "specialty": "orthopedics",
+    "severity": "mild",
+    "escalation": "office"
+  },
+  {
+    "text": "My been having swelling for the past few days won't go away",
+    "specialty": "orthopedics",
+    "severity": "severe",
+    "escalation": "office"
+  },
+  {
+    "text": "The been having swelling for the past few days is limiting my movement",
+    "specialty": "orthopedics",
+    "severity": "severe",
+    "escalation": "office"
+  },
+  {
+    "text": "I injured myself and now have fracture",
+    "specialty": "orthopedics",
+    "severity": "moderate",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "My fracture won't go away",
+    "specialty": "orthopedics",
+    "severity": "severe",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "The fracture is limiting my movement",
+    "specialty": "orthopedics",
+    "severity": "mild",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "I injured myself and now have fracture and it's affecting my daily life",
+    "specialty": "orthopedics",
+    "severity": "severe",
+    "escalation": "office"
+  },
+  {
+    "text": "My fracture and it's affecting my daily life won't go away",
+    "specialty": "orthopedics",
+    "severity": "moderate",
+    "escalation": "office"
+  },
+  {
+    "text": "The fracture and it's affecting my daily life is limiting my movement",
+    "specialty": "orthopedics",
+    "severity": "mild",
+    "escalation": "office"
+  },
+  {
+    "text": "I injured myself and now have been having fracture for the past few days",
+    "specialty": "orthopedics",
+    "severity": "mild",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "My been having fracture for the past few days won't go away",
+    "specialty": "orthopedics",
+    "severity": "severe",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "The been having fracture for the past few days is limiting my movement",
+    "specialty": "orthopedics",
+    "severity": "mild",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "I injured myself and now have joint pain",
+    "specialty": "orthopedics",
+    "severity": "moderate",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "My joint pain won't go away",
+    "specialty": "orthopedics",
+    "severity": "severe",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "The joint pain is limiting my movement",
+    "specialty": "orthopedics",
+    "severity": "mild",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "I injured myself and now have joint pain and it's affecting my daily life",
+    "specialty": "orthopedics",
+    "severity": "moderate",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "My joint pain and it's affecting my daily life won't go away",
+    "specialty": "orthopedics",
+    "severity": "severe",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "The joint pain and it's affecting my daily life is limiting my movement",
+    "specialty": "orthopedics",
+    "severity": "severe",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "I injured myself and now have been having joint pain for the past few days",
+    "specialty": "orthopedics",
+    "severity": "mild",
+    "escalation": "office"
+  },
+  {
+    "text": "My been having joint pain for the past few days won't go away",
+    "specialty": "orthopedics",
+    "severity": "mild",
+    "escalation": "office"
+  },
+  {
+    "text": "The been having joint pain for the past few days is limiting my movement",
+    "specialty": "orthopedics",
+    "severity": "moderate",
+    "escalation": "office"
+  },
+  {
+    "text": "I injured myself and now have inability to move",
+    "specialty": "orthopedics",
+    "severity": "severe",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "My inability to move won't go away",
+    "specialty": "orthopedics",
+    "severity": "severe",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "The inability to move is limiting my movement",
+    "specialty": "orthopedics",
+    "severity": "mild",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "I injured myself and now have inability to move and it's affecting my daily life",
+    "specialty": "orthopedics",
+    "severity": "moderate",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "My inability to move and it's affecting my daily life won't go away",
+    "specialty": "orthopedics",
+    "severity": "mild",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "The inability to move and it's affecting my daily life is limiting my movement",
+    "specialty": "orthopedics",
+    "severity": "moderate",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "I injured myself and now have been having inability to move for the past few days",
+    "specialty": "orthopedics",
+    "severity": "moderate",
+    "escalation": "office"
+  },
+  {
+    "text": "My been having inability to move for the past few days won't go away",
+    "specialty": "orthopedics",
+    "severity": "mild",
+    "escalation": "office"
+  },
+  {
+    "text": "The been having inability to move for the past few days is limiting my movement",
+    "specialty": "orthopedics",
+    "severity": "severe",
+    "escalation": "office"
+  },
+  {
+    "text": "I injured myself and now have bruising",
+    "specialty": "orthopedics",
+    "severity": "moderate",
+    "escalation": "office"
+  },
+  {
+    "text": "My bruising won't go away",
+    "specialty": "orthopedics",
+    "severity": "severe",
+    "escalation": "office"
+  },
+  {
+    "text": "The bruising is limiting my movement",
+    "specialty": "orthopedics",
+    "severity": "mild",
+    "escalation": "office"
+  },
+  {
+    "text": "I injured myself and now have bruising and it's affecting my daily life",
+    "specialty": "orthopedics",
+    "severity": "mild",
+    "escalation": "office"
+  },
+  {
+    "text": "My bruising and it's affecting my daily life won't go away",
+    "specialty": "orthopedics",
+    "severity": "moderate",
+    "escalation": "office"
+  },
+  {
+    "text": "The bruising and it's affecting my daily life is limiting my movement",
+    "specialty": "orthopedics",
+    "severity": "severe",
+    "escalation": "office"
+  },
+  {
+    "text": "I injured myself and now have been having bruising for the past few days",
+    "specialty": "orthopedics",
+    "severity": "moderate",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "My been having bruising for the past few days won't go away",
+    "specialty": "orthopedics",
+    "severity": "severe",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "The been having bruising for the past few days is limiting my movement",
+    "specialty": "orthopedics",
+    "severity": "severe",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "I injured myself and now have sprain",
+    "specialty": "orthopedics",
+    "severity": "severe",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "My sprain won't go away",
+    "specialty": "orthopedics",
+    "severity": "mild",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "The sprain is limiting my movement",
+    "specialty": "orthopedics",
+    "severity": "severe",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "I injured myself and now have sprain and it's affecting my daily life",
+    "specialty": "orthopedics",
+    "severity": "mild",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "My sprain and it's affecting my daily life won't go away",
+    "specialty": "orthopedics",
+    "severity": "severe",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "The sprain and it's affecting my daily life is limiting my movement",
+    "specialty": "orthopedics",
+    "severity": "mild",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "I injured myself and now have been having sprain for the past few days",
+    "specialty": "orthopedics",
+    "severity": "mild",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "My been having sprain for the past few days won't go away",
+    "specialty": "orthopedics",
+    "severity": "moderate",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "The been having sprain for the past few days is limiting my movement",
+    "specialty": "orthopedics",
+    "severity": "mild",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "I injured myself and now have severe knee pain",
+    "specialty": "orthopedics",
+    "severity": "severe",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "My severe knee pain won't go away",
+    "specialty": "orthopedics",
+    "severity": "severe",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "The severe knee pain is limiting my movement",
+    "specialty": "orthopedics",
+    "severity": "moderate",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "I injured myself and now have severe knee pain and it's affecting my daily life",
+    "specialty": "orthopedics",
+    "severity": "severe",
+    "escalation": "office"
+  },
+  {
+    "text": "My severe knee pain and it's affecting my daily life won't go away",
+    "specialty": "orthopedics",
+    "severity": "mild",
+    "escalation": "office"
+  },
+  {
+    "text": "The severe knee pain and it's affecting my daily life is limiting my movement",
+    "specialty": "orthopedics",
+    "severity": "moderate",
+    "escalation": "office"
+  },
+  {
+    "text": "I injured myself and now have been having severe knee pain for the past few days",
+    "specialty": "orthopedics",
+    "severity": "severe",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "My been having severe knee pain for the past few days won't go away",
+    "specialty": "orthopedics",
+    "severity": "severe",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "The been having severe knee pain for the past few days is limiting my movement",
+    "specialty": "orthopedics",
+    "severity": "moderate",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "I developed rash on my skin",
+    "specialty": "dermatology",
+    "severity": "moderate",
+    "escalation": "office"
+  },
+  {
+    "text": "There's a rash appearing",
+    "specialty": "dermatology",
+    "severity": "moderate",
+    "escalation": "office"
+  },
+  {
+    "text": "My rash is spreading",
+    "specialty": "dermatology",
+    "severity": "mild",
+    "escalation": "office"
+  },
+  {
+    "text": "I developed rash and it's affecting my daily life on my skin",
+    "specialty": "dermatology",
+    "severity": "moderate",
+    "escalation": "office"
+  },
+  {
+    "text": "There's a rash and it's affecting my daily life appearing",
+    "specialty": "dermatology",
+    "severity": "mild",
+    "escalation": "office"
+  },
+  {
+    "text": "My rash and it's affecting my daily life is spreading",
+    "specialty": "dermatology",
+    "severity": "moderate",
+    "escalation": "office"
+  },
+  {
+    "text": "I developed been having rash for the past few days on my skin",
+    "specialty": "dermatology",
+    "severity": "mild",
+    "escalation": "office"
+  },
+  {
+    "text": "There's a been having rash for the past few days appearing",
+    "specialty": "dermatology",
+    "severity": "mild",
+    "escalation": "office"
+  },
+  {
+    "text": "My been having rash for the past few days is spreading",
+    "specialty": "dermatology",
+    "severity": "mild",
+    "escalation": "office"
+  },
+  {
+    "text": "I developed itching on my skin",
+    "specialty": "dermatology",
+    "severity": "mild",
+    "escalation": "office"
+  },
+  {
+    "text": "There's a itching appearing",
+    "specialty": "dermatology",
+    "severity": "mild",
+    "escalation": "office"
+  },
+  {
+    "text": "My itching is spreading",
+    "specialty": "dermatology",
+    "severity": "mild",
+    "escalation": "office"
+  },
+  {
+    "text": "I developed itching and it's affecting my daily life on my skin",
+    "specialty": "dermatology",
+    "severity": "mild",
+    "escalation": "office"
+  },
+  {
+    "text": "There's a itching and it's affecting my daily life appearing",
+    "specialty": "dermatology",
+    "severity": "moderate",
+    "escalation": "office"
+  },
+  {
+    "text": "My itching and it's affecting my daily life is spreading",
+    "specialty": "dermatology",
+    "severity": "mild",
+    "escalation": "office"
+  },
+  {
+    "text": "I developed been having itching for the past few days on my skin",
+    "specialty": "dermatology",
+    "severity": "mild",
+    "escalation": "office"
+  },
+  {
+    "text": "There's a been having itching for the past few days appearing",
+    "specialty": "dermatology",
+    "severity": "mild",
+    "escalation": "office"
+  },
+  {
+    "text": "My been having itching for the past few days is spreading",
+    "specialty": "dermatology",
+    "severity": "mild",
+    "escalation": "office"
+  },
+  {
+    "text": "I developed lesion on my skin",
+    "specialty": "dermatology",
+    "severity": "mild",
+    "escalation": "office"
+  },
+  {
+    "text": "There's a lesion appearing",
+    "specialty": "dermatology",
+    "severity": "mild",
+    "escalation": "office"
+  },
+  {
+    "text": "My lesion is spreading",
+    "specialty": "dermatology",
+    "severity": "moderate",
+    "escalation": "office"
+  },
+  {
+    "text": "I developed lesion and it's affecting my daily life on my skin",
+    "specialty": "dermatology",
+    "severity": "mild",
+    "escalation": "office"
+  },
+  {
+    "text": "There's a lesion and it's affecting my daily life appearing",
+    "specialty": "dermatology",
+    "severity": "mild",
+    "escalation": "office"
+  },
+  {
+    "text": "My lesion and it's affecting my daily life is spreading",
+    "specialty": "dermatology",
+    "severity": "moderate",
+    "escalation": "office"
+  },
+  {
+    "text": "I developed been having lesion for the past few days on my skin",
+    "specialty": "dermatology",
+    "severity": "moderate",
+    "escalation": "office"
+  },
+  {
+    "text": "There's a been having lesion for the past few days appearing",
+    "specialty": "dermatology",
+    "severity": "moderate",
+    "escalation": "office"
+  },
+  {
+    "text": "My been having lesion for the past few days is spreading",
+    "specialty": "dermatology",
+    "severity": "moderate",
+    "escalation": "office"
+  },
+  {
+    "text": "I developed skin discoloration on my skin",
+    "specialty": "dermatology",
+    "severity": "mild",
+    "escalation": "office"
+  },
+  {
+    "text": "There's a skin discoloration appearing",
+    "specialty": "dermatology",
+    "severity": "moderate",
+    "escalation": "office"
+  },
+  {
+    "text": "My skin discoloration is spreading",
+    "specialty": "dermatology",
+    "severity": "moderate",
+    "escalation": "office"
+  },
+  {
+    "text": "I developed skin discoloration and it's affecting my daily life on my skin",
+    "specialty": "dermatology",
+    "severity": "mild",
+    "escalation": "office"
+  },
+  {
+    "text": "There's a skin discoloration and it's affecting my daily life appearing",
+    "specialty": "dermatology",
+    "severity": "moderate",
+    "escalation": "office"
+  },
+  {
+    "text": "My skin discoloration and it's affecting my daily life is spreading",
+    "specialty": "dermatology",
+    "severity": "mild",
+    "escalation": "office"
+  },
+  {
+    "text": "I developed been having skin discoloration for the past few days on my skin",
+    "specialty": "dermatology",
+    "severity": "moderate",
+    "escalation": "office"
+  },
+  {
+    "text": "There's a been having skin discoloration for the past few days appearing",
+    "specialty": "dermatology",
+    "severity": "mild",
+    "escalation": "office"
+  },
+  {
+    "text": "My been having skin discoloration for the past few days is spreading",
+    "specialty": "dermatology",
+    "severity": "mild",
+    "escalation": "office"
+  },
+  {
+    "text": "I developed burning sensation on my skin",
+    "specialty": "dermatology",
+    "severity": "mild",
+    "escalation": "office"
+  },
+  {
+    "text": "There's a burning sensation appearing",
+    "specialty": "dermatology",
+    "severity": "mild",
+    "escalation": "office"
+  },
+  {
+    "text": "My burning sensation is spreading",
+    "specialty": "dermatology",
+    "severity": "mild",
+    "escalation": "office"
+  },
+  {
+    "text": "I developed burning sensation and it's affecting my daily life on my skin",
+    "specialty": "dermatology",
+    "severity": "moderate",
+    "escalation": "office"
+  },
+  {
+    "text": "There's a burning sensation and it's affecting my daily life appearing",
+    "specialty": "dermatology",
+    "severity": "mild",
+    "escalation": "office"
+  },
+  {
+    "text": "My burning sensation and it's affecting my daily life is spreading",
+    "specialty": "dermatology",
+    "severity": "moderate",
+    "escalation": "office"
+  },
+  {
+    "text": "I developed been having burning sensation for the past few days on my skin",
+    "specialty": "dermatology",
+    "severity": "moderate",
+    "escalation": "office"
+  },
+  {
+    "text": "There's a been having burning sensation for the past few days appearing",
+    "specialty": "dermatology",
+    "severity": "moderate",
+    "escalation": "office"
+  },
+  {
+    "text": "My been having burning sensation for the past few days is spreading",
+    "specialty": "dermatology",
+    "severity": "moderate",
+    "escalation": "office"
+  },
+  {
+    "text": "I developed hives on my skin",
+    "specialty": "dermatology",
+    "severity": "mild",
+    "escalation": "office"
+  },
+  {
+    "text": "There's a hives appearing",
+    "specialty": "dermatology",
+    "severity": "moderate",
+    "escalation": "office"
+  },
+  {
+    "text": "My hives is spreading",
+    "specialty": "dermatology",
+    "severity": "mild",
+    "escalation": "office"
+  },
+  {
+    "text": "I developed hives and it's affecting my daily life on my skin",
+    "specialty": "dermatology",
+    "severity": "mild",
+    "escalation": "office"
+  },
+  {
+    "text": "There's a hives and it's affecting my daily life appearing",
+    "specialty": "dermatology",
+    "severity": "mild",
+    "escalation": "office"
+  },
+  {
+    "text": "My hives and it's affecting my daily life is spreading",
+    "specialty": "dermatology",
+    "severity": "moderate",
+    "escalation": "office"
+  },
+  {
+    "text": "I developed been having hives for the past few days on my skin",
+    "specialty": "dermatology",
+    "severity": "moderate",
+    "escalation": "office"
+  },
+  {
+    "text": "There's a been having hives for the past few days appearing",
+    "specialty": "dermatology",
+    "severity": "moderate",
+    "escalation": "office"
+  },
+  {
+    "text": "My been having hives for the past few days is spreading",
+    "specialty": "dermatology",
+    "severity": "mild",
+    "escalation": "office"
+  },
+  {
+    "text": "I developed eczema on my skin",
+    "specialty": "dermatology",
+    "severity": "mild",
+    "escalation": "office"
+  },
+  {
+    "text": "There's a eczema appearing",
+    "specialty": "dermatology",
+    "severity": "mild",
+    "escalation": "office"
+  },
+  {
+    "text": "My eczema is spreading",
+    "specialty": "dermatology",
+    "severity": "mild",
+    "escalation": "office"
+  },
+  {
+    "text": "I developed eczema and it's affecting my daily life on my skin",
+    "specialty": "dermatology",
+    "severity": "mild",
+    "escalation": "office"
+  },
+  {
+    "text": "There's a eczema and it's affecting my daily life appearing",
+    "specialty": "dermatology",
+    "severity": "moderate",
+    "escalation": "office"
+  },
+  {
+    "text": "My eczema and it's affecting my daily life is spreading",
+    "specialty": "dermatology",
+    "severity": "mild",
+    "escalation": "office"
+  },
+  {
+    "text": "I developed been having eczema for the past few days on my skin",
+    "specialty": "dermatology",
+    "severity": "moderate",
+    "escalation": "office"
+  },
+  {
+    "text": "There's a been having eczema for the past few days appearing",
+    "specialty": "dermatology",
+    "severity": "moderate",
+    "escalation": "office"
+  },
+  {
+    "text": "My been having eczema for the past few days is spreading",
+    "specialty": "dermatology",
+    "severity": "mild",
+    "escalation": "office"
+  },
+  {
+    "text": "I have fever",
+    "specialty": "general_triage",
+    "severity": "moderate",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "I'm suffering from fever",
+    "specialty": "general_triage",
+    "severity": "moderate",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "The fever has been ongoing",
+    "specialty": "general_triage",
+    "severity": "moderate",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "I have fever and it's affecting my daily life",
+    "specialty": "general_triage",
+    "severity": "severe",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "I'm suffering from fever and it's affecting my daily life",
+    "specialty": "general_triage",
+    "severity": "moderate",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "The fever and it's affecting my daily life has been ongoing",
+    "specialty": "general_triage",
+    "severity": "moderate",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "I have been having fever for the past few days",
+    "specialty": "general_triage",
+    "severity": "mild",
+    "escalation": "office"
+  },
+  {
+    "text": "I'm suffering from been having fever for the past few days",
+    "specialty": "general_triage",
+    "severity": "moderate",
+    "escalation": "office"
+  },
+  {
+    "text": "The been having fever for the past few days has been ongoing",
+    "specialty": "general_triage",
+    "severity": "moderate",
+    "escalation": "office"
+  },
+  {
+    "text": "I have cough",
+    "specialty": "general_triage",
+    "severity": "severe",
+    "escalation": "office"
+  },
+  {
+    "text": "I'm suffering from cough",
+    "specialty": "general_triage",
+    "severity": "moderate",
+    "escalation": "office"
+  },
+  {
+    "text": "The cough has been ongoing",
+    "specialty": "general_triage",
+    "severity": "severe",
+    "escalation": "office"
+  },
+  {
+    "text": "I have cough and it's affecting my daily life",
+    "specialty": "general_triage",
+    "severity": "severe",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "I'm suffering from cough and it's affecting my daily life",
+    "specialty": "general_triage",
+    "severity": "severe",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "The cough and it's affecting my daily life has been ongoing",
+    "specialty": "general_triage",
+    "severity": "moderate",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "I have been having cough for the past few days",
+    "specialty": "general_triage",
+    "severity": "moderate",
+    "escalation": "office"
+  },
+  {
+    "text": "I'm suffering from been having cough for the past few days",
+    "specialty": "general_triage",
+    "severity": "moderate",
+    "escalation": "office"
+  },
+  {
+    "text": "The been having cough for the past few days has been ongoing",
+    "specialty": "general_triage",
+    "severity": "mild",
+    "escalation": "office"
+  },
+  {
+    "text": "I have body aches",
+    "specialty": "general_triage",
+    "severity": "moderate",
+    "escalation": "office"
+  },
+  {
+    "text": "I'm suffering from body aches",
+    "specialty": "general_triage",
+    "severity": "severe",
+    "escalation": "office"
+  },
+  {
+    "text": "The body aches has been ongoing",
+    "specialty": "general_triage",
+    "severity": "moderate",
+    "escalation": "office"
+  },
+  {
+    "text": "I have body aches and it's affecting my daily life",
+    "specialty": "general_triage",
+    "severity": "mild",
+    "escalation": "office"
+  },
+  {
+    "text": "I'm suffering from body aches and it's affecting my daily life",
+    "specialty": "general_triage",
+    "severity": "moderate",
+    "escalation": "office"
+  },
+  {
+    "text": "The body aches and it's affecting my daily life has been ongoing",
+    "specialty": "general_triage",
+    "severity": "mild",
+    "escalation": "office"
+  },
+  {
+    "text": "I have been having body aches for the past few days",
+    "specialty": "general_triage",
+    "severity": "mild",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "I'm suffering from been having body aches for the past few days",
+    "specialty": "general_triage",
+    "severity": "severe",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "The been having body aches for the past few days has been ongoing",
+    "specialty": "general_triage",
+    "severity": "severe",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "I have headache",
+    "specialty": "general_triage",
+    "severity": "severe",
+    "escalation": "office"
+  },
+  {
+    "text": "I'm suffering from headache",
+    "specialty": "general_triage",
+    "severity": "mild",
+    "escalation": "office"
+  },
+  {
+    "text": "The headache has been ongoing",
+    "specialty": "general_triage",
+    "severity": "moderate",
+    "escalation": "office"
+  },
+  {
+    "text": "I have headache and it's affecting my daily life",
+    "specialty": "general_triage",
+    "severity": "mild",
+    "escalation": "office"
+  },
+  {
+    "text": "I'm suffering from headache and it's affecting my daily life",
+    "specialty": "general_triage",
+    "severity": "severe",
+    "escalation": "office"
+  },
+  {
+    "text": "The headache and it's affecting my daily life has been ongoing",
+    "specialty": "general_triage",
+    "severity": "mild",
+    "escalation": "office"
+  },
+  {
+    "text": "I have been having headache for the past few days",
+    "specialty": "general_triage",
+    "severity": "severe",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "I'm suffering from been having headache for the past few days",
+    "specialty": "general_triage",
+    "severity": "mild",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "The been having headache for the past few days has been ongoing",
+    "specialty": "general_triage",
+    "severity": "moderate",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "I have nausea",
+    "specialty": "general_triage",
+    "severity": "mild",
+    "escalation": "office"
+  },
+  {
+    "text": "I'm suffering from nausea",
+    "specialty": "general_triage",
+    "severity": "moderate",
+    "escalation": "office"
+  },
+  {
+    "text": "The nausea has been ongoing",
+    "specialty": "general_triage",
+    "severity": "severe",
+    "escalation": "office"
+  },
+  {
+    "text": "I have nausea and it's affecting my daily life",
+    "specialty": "general_triage",
+    "severity": "moderate",
+    "escalation": "office"
+  },
+  {
+    "text": "I'm suffering from nausea and it's affecting my daily life",
+    "specialty": "general_triage",
+    "severity": "moderate",
+    "escalation": "office"
+  },
+  {
+    "text": "The nausea and it's affecting my daily life has been ongoing",
+    "specialty": "general_triage",
+    "severity": "moderate",
+    "escalation": "office"
+  },
+  {
+    "text": "I have been having nausea for the past few days",
+    "specialty": "general_triage",
+    "severity": "moderate",
+    "escalation": "office"
+  },
+  {
+    "text": "I'm suffering from been having nausea for the past few days",
+    "specialty": "general_triage",
+    "severity": "mild",
+    "escalation": "office"
+  },
+  {
+    "text": "The been having nausea for the past few days has been ongoing",
+    "specialty": "general_triage",
+    "severity": "moderate",
+    "escalation": "office"
+  },
+  {
+    "text": "I have fatigue",
+    "specialty": "general_triage",
+    "severity": "mild",
+    "escalation": "office"
+  },
+  {
+    "text": "I'm suffering from fatigue",
+    "specialty": "general_triage",
+    "severity": "mild",
+    "escalation": "office"
+  },
+  {
+    "text": "The fatigue has been ongoing",
+    "specialty": "general_triage",
+    "severity": "moderate",
+    "escalation": "office"
+  },
+  {
+    "text": "I have fatigue and it's affecting my daily life",
+    "specialty": "general_triage",
+    "severity": "severe",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "I'm suffering from fatigue and it's affecting my daily life",
+    "specialty": "general_triage",
+    "severity": "moderate",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "The fatigue and it's affecting my daily life has been ongoing",
+    "specialty": "general_triage",
+    "severity": "severe",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "I have been having fatigue for the past few days",
+    "specialty": "general_triage",
+    "severity": "severe",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "I'm suffering from been having fatigue for the past few days",
+    "specialty": "general_triage",
+    "severity": "moderate",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "The been having fatigue for the past few days has been ongoing",
+    "specialty": "general_triage",
+    "severity": "severe",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "I have loss of appetite",
+    "specialty": "general_triage",
+    "severity": "moderate",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "I'm suffering from loss of appetite",
+    "specialty": "general_triage",
+    "severity": "mild",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "The loss of appetite has been ongoing",
+    "specialty": "general_triage",
+    "severity": "mild",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "I have loss of appetite and it's affecting my daily life",
+    "specialty": "general_triage",
+    "severity": "severe",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "I'm suffering from loss of appetite and it's affecting my daily life",
+    "specialty": "general_triage",
+    "severity": "severe",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "The loss of appetite and it's affecting my daily life has been ongoing",
+    "specialty": "general_triage",
+    "severity": "mild",
+    "escalation": "urgent_office"
+  },
+  {
+    "text": "I have been having loss of appetite for the past few days",
+    "specialty": "general_triage",
+    "severity": "moderate",
+    "escalation": "office"
+  },
+  {
+    "text": "I'm suffering from been having loss of appetite for the past few days",
+    "specialty": "general_triage",
+    "severity": "mild",
+    "escalation": "office"
+  },
+  {
+    "text": "The been having loss of appetite for the past few days has been ongoing",
+    "specialty": "general_triage",
+    "severity": "moderate",
+    "escalation": "office"
+  }
+]
