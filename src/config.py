@@ -26,6 +26,18 @@ class Settings(BaseSettings):
     groq_timeout_seconds: int = 30
     groq_model: str = "whisper-large-v3"
 
+    # TTS
+    elevenlabs_api_key: str = ""  # optional - falls back to free gTTS if unset
+
+    # Real-time streaming
+    stream_chunk_seconds: float = 2.5  # rolling window sent to Whisper per partial transcript
+    stream_silence_timeout_seconds: float = 1.5  # gap that ends an utterance
+
+    # LiveKit (WebRTC)
+    livekit_url: str = "ws://localhost:7880"
+    livekit_api_key: str = "devkey"
+    livekit_api_secret: str = "secret"
+
     # Database
     database_url: str = "sqlite:///./medical_agent.db"
     # Postgres example: postgresql://user:password@localhost/dbname

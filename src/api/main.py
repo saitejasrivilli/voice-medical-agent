@@ -5,8 +5,8 @@ FastAPI application with main API endpoints for the medical voice agent.
 import logging
 import time
 import os
-from fastapi import FastAPI, UploadFile, File, HTTPException, Request, Depends
-from fastapi.responses import JSONResponse
+from fastapi import FastAPI, UploadFile, File, HTTPException, Request, Depends, WebSocket, WebSocketDisconnect
+from fastapi.responses import JSONResponse, Response
 from fastapi.middleware.cors import CORSMiddleware
 from slowapi import Limiter
 from slowapi.util import get_remote_address
@@ -26,6 +26,9 @@ from src.agents.symptom_extractor import LLMBasedExtractor, MockExtractor
 from src.agents.specialty_router import SpecialtyRouter, MockRouter
 from src.agents.factory import AgentFactory
 from src.observability.logging import setup_logging, metrics, generate_request_id
+from src.voice.synthesizer import get_synthesizer, SynthesisError
+from src.voice.streaming_transcriber import StreamingSession, StreamResult
+from src.pipeline import run_text_pipeline
 
 # Setup logging
 logger = setup_logging()
@@ -154,29 +157,6 @@ async def get_metrics(db: Session = Depends(get_db)):
 # ============================================================================
 # Assessment Endpoints
 # ============================================================================
-from integrations.ehr_connector import EHRFactory
-
-@app.post("/assess-and-refer")
-async def assess_and_refer(file: UploadFile, patient_id: str = None):
-    """Assess symptoms and optionally send referral to EHR"""
-    # Run assessment
-    assessment = await assess_symptoms(file)
-    
-    # If EHR enabled and urgent, create referral
-    if patient_id:
-        ehr = EHRFactory.create("epic", "mock", "mock-key")
-        referral = ehr.create_referral(
-            patient_id,
-            assessment["routing"]["specialty"],
-            assessment["routing"]["escalation_level"]
-        )
-        return {
-            "assessment": assessment,
-            "referral": json.loads(referral),
-            "status": "sent_to_ehr"
-        }
-    
-    return assessment
 @app.post("/assess", response_model=AssessmentOutput)
 @limiter.limit(f"{settings.rate_limit_per_minute}/minute")
 async def assess_symptoms(
@@ -376,6 +356,94 @@ async def assess_symptoms(
             status_code=500,
             detail="Assessment processing failed"
         )
+
+# ============================================================================
+# Text-to-Speech
+# ============================================================================
+
+@app.post("/speak")
+@limiter.limit(f"{settings.rate_limit_per_minute}/minute")
+async def speak(request: Request, text: str):
+    """Synthesize speech for arbitrary agent text (gTTS by default, ElevenLabs
+    if ELEVENLABS_API_KEY is set). Returns audio/mpeg bytes."""
+    try:
+        audio_bytes = get_synthesizer().synthesize(text)
+    except SynthesisError as e:
+        raise HTTPException(status_code=422, detail=str(e))
+    return Response(content=audio_bytes, media_type="audio/mpeg")
+
+
+# ============================================================================
+# Real-time streaming assessment (WebSocket)
+# ============================================================================
+
+@app.websocket("/ws/assess")
+async def ws_assess(websocket: WebSocket):
+    """
+    Real-time voice pipeline over a WebSocket.
+
+    Protocol: client sends raw 16-bit mono PCM audio frames at 16kHz as
+    binary messages. The server buffers a rolling window
+    (settings.stream_chunk_seconds) and emits partial transcripts as JSON:
+        {"type": "partial", "text": "...", "latency_ms": 240}
+    After settings.stream_silence_timeout_seconds of no incoming audio, the
+    utterance is considered complete: the server runs the full assessment
+    pipeline (extraction -> routing -> agent) and emits:
+        {"type": "final", "transcription": "...", "specialty": "...",
+         "confidence": 0.8, "reply_text": "..."}
+    followed by a binary message containing the synthesized MP3 reply.
+
+    Note: this buffers-and-rebatches audio into a batch Whisper call rather
+    than true token-streaming ASR (Groq's API doesn't expose the latter) —
+    see src/voice/streaming_transcriber.py for details.
+    """
+    await websocket.accept()
+    session = StreamingSession(transcriber=get_transcriber())
+    synthesizer = get_synthesizer()
+
+    async def send_partial(result: StreamResult):
+        await websocket.send_json({
+            "type": "partial", "text": result.text, "latency_ms": result.latency_ms,
+        })
+
+    try:
+        while True:
+            try:
+                message = await asyncio.wait_for(
+                    websocket.receive(), timeout=settings.stream_silence_timeout_seconds
+                )
+            except asyncio.TimeoutError:
+                message = None
+
+            if message is not None and "bytes" in message and message["bytes"] is not None:
+                partial = session.push_frame(message["bytes"])
+                if partial is not None:
+                    await send_partial(partial)
+                continue
+            if message is not None and message.get("type") == "websocket.disconnect":
+                break
+
+            if session.is_utterance_complete():
+                final = session.finalize()
+                if final is None or not final.text.strip():
+                    continue
+                pipeline_result = run_text_pipeline(final.text)
+                await websocket.send_json({
+                    "type": "final",
+                    "transcription": pipeline_result.transcription,
+                    "specialty": pipeline_result.specialty,
+                    "confidence": pipeline_result.confidence,
+                    "escalation_level": pipeline_result.escalation_level,
+                    "reply_text": pipeline_result.reply_text,
+                })
+                try:
+                    audio_reply = synthesizer.synthesize(pipeline_result.reply_text)
+                    await websocket.send_bytes(audio_reply)
+                except SynthesisError as e:
+                    logger.warning(f"TTS reply failed: {e}")
+    except WebSocketDisconnect:
+        logger.info("WebSocket client disconnected")
+
 
 @app.get("/assessments/{assessment_id}")
 async def get_assessment(

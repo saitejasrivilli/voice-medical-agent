@@ -5,6 +5,9 @@ Production-grade medical voice assessment system with specialty routing, LLM-bas
 ## Features
 
 - **Real Voice Integration**: Accepts audio uploads (.wav, .mp3, .webm) and transcribes using Groq Whisper API
+- **Real-time streaming pipeline**: `/ws/assess` WebSocket buffers live PCM16 audio into rolling windows, emits partial transcripts, and runs the full pipeline on end-of-utterance (see caveat below — Groq's Whisper API is batch, not token-streaming, so this is windowed re-transcription rather than true incremental ASR)
+- **Text-to-speech replies**: agent's follow-up questions/recommendations are synthesized to speech (`gTTS` free by default, `ElevenLabs` if `ELEVENLABS_API_KEY` is set) and streamed back over the WebSocket or LiveKit room
+- **WebRTC voice calls**: `src/realtime/webrtc_agent.py` is a LiveKit agent worker that joins a room, consumes a caller's live microphone track, and publishes the synthesized reply back as a real WebRTC audio track. LiveKit is self-hosted (open-source, free) via `docker-compose.yml` — no phone number required. This does **not** answer PSTN phone calls by itself; that needs a SIP trunk provider (e.g. Twilio, Telnyx) configured in front of LiveKit, which isn't wired up here.
 - **Intelligent Symptom Extraction**: Uses LLM to extract structured medical information from transcriptions
 - **Specialty-Specific Routing**: Intelligently routes patients to appropriate medical specialty (Cardiology, Orthopedics, Dermatology, General Triage)
 - **Specialty-Specific Agents**: Each specialty has custom logic for follow-up questions and recommendations
@@ -161,6 +164,23 @@ Get aggregated metrics.
 
 ### GET /assessments/{assessment_id}
 Retrieve previous assessment.
+
+### POST /speak
+Synthesize speech for arbitrary agent text. Returns `audio/mpeg` bytes.
+```bash
+curl -X POST "http://localhost:8000/speak?text=Please+seek+emergency+care" --output reply.mp3
+```
+
+### WS /ws/assess
+Real-time streaming pipeline. Client sends raw 16-bit mono PCM audio (16kHz) as binary
+WebSocket frames; server sends `{"type": "partial", ...}` JSON messages as rolling
+transcripts fill in, then `{"type": "final", ...}` plus a binary MP3 reply once
+`STREAM_SILENCE_TIMEOUT_SECONDS` of silence marks the end of an utterance.
+
+### WebRTC (LiveKit)
+`docker-compose up livekit voice-agent-worker` starts a self-hosted LiveKit server and
+the agent worker (`src/realtime/webrtc_agent.py`). Any LiveKit-compatible client
+(browser SDK, mobile SDK) can join the room and talk to the agent over real WebRTC.
 
 ## Configuration
 
