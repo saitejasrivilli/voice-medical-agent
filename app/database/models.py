@@ -114,9 +114,9 @@ class AuditLog(Base):
     status = Column(String(20), nullable=False)  # success, failure
 
     __table_args__ = (
-        Index('idx_assessment_id', 'assessment_id'),
-        Index('idx_action_type', 'action_type'),
-        Index('idx_created_at', 'created_at'),
+        Index('idx_audit_logs_assessment_id', 'assessment_id'),
+        Index('idx_audit_logs_action_type', 'action_type'),
+        Index('idx_audit_logs_created_at', 'created_at'),
     )
 
 
@@ -153,8 +153,8 @@ class PerformanceMetrics(Base):
     time_window = Column(String(20), nullable=False)  # hourly, daily, monthly
 
     __table_args__ = (
-        Index('idx_time_window', 'time_window'),
-        Index('idx_created_at', 'created_at'),
+        Index('idx_performance_metrics_time_window', 'time_window'),
+        Index('idx_performance_metrics_created_at', 'created_at'),
     )
 
 
