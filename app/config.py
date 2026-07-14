@@ -20,6 +20,11 @@ class Settings(BaseSettings):
     api_host: str = "127.0.0.1"
     api_port: int = 8000
     api_prefix: str = "/api/v1"
+    # Shared-secret auth for client-facing endpoints that return assessment
+    # data (/assess, /assessments/{id}, /speak). Empty string = auth disabled
+    # (local dev default); set via env in any environment reachable from
+    # the public internet.
+    api_key: str = ""
 
     # Groq API
     groq_api_key: str = ""  # Required - must be set via env

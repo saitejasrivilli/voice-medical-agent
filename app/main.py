@@ -5,7 +5,8 @@ FastAPI application with main API endpoints for the medical voice agent.
 import logging
 import time
 import os
-from fastapi import FastAPI, UploadFile, File, HTTPException, Request, Depends, WebSocket, WebSocketDisconnect
+import secrets
+from fastapi import FastAPI, UploadFile, File, HTTPException, Request, Depends, Header, WebSocket, WebSocketDisconnect
 from fastapi.responses import JSONResponse, Response
 from fastapi.middleware.cors import CORSMiddleware
 from slowapi import Limiter
@@ -57,6 +58,19 @@ app.add_exception_handler(RateLimitExceeded, lambda request, exc: JSONResponse(
     status_code=429,
     content={"error": "Rate limit exceeded", "detail": str(exc)},
 ))
+
+async def require_api_key(x_api_key: str = Header(default="")):
+    """Guard client-facing endpoints that return assessment data.
+
+    Auth is disabled (no-op) when api_key isn't configured, which keeps
+    local dev/tests working without a key. Set API_KEY once this is
+    reachable from the public internet.
+    """
+    if not settings.api_key:
+        return
+    if not secrets.compare_digest(x_api_key, settings.api_key):
+        raise HTTPException(status_code=401, detail="Invalid or missing API key")
+
 
 # Database initialization
 engine = init_db(settings.database_url)
@@ -163,6 +177,7 @@ async def assess_symptoms(
     request: Request,
     file: UploadFile = File(...),
     db: Session = Depends(get_db),
+    _: None = Depends(require_api_key),
 ):
     """
     Main assessment endpoint - accepts audio file and returns medical assessment.
@@ -390,7 +405,7 @@ async def assess_symptoms(
 
 @app.post("/speak")
 @limiter.limit(f"{settings.rate_limit_per_minute}/minute")
-async def speak(request: Request, text: str):
+async def speak(request: Request, text: str, _: None = Depends(require_api_key)):
     """Synthesize speech for arbitrary agent text (gTTS by default, ElevenLabs
     if ELEVENLABS_API_KEY is set). Returns audio/mpeg bytes."""
     try:
@@ -476,6 +491,7 @@ async def ws_assess(websocket: WebSocket):
 async def get_assessment(
     assessment_id: str,
     db: Session = Depends(get_db),
+    _: None = Depends(require_api_key),
 ):
     """Retrieve previous assessment by ID."""
     assessment_service = AssessmentService(db)
