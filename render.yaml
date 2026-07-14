@@ -11,8 +11,7 @@ services:
     env: docker
     dockerfilePath: ./app/Dockerfile
     dockerContext: .
-    dockerCommand: >-
-      sh -c "python -m uvicorn app.main:app --host 0.0.0.0 --port $PORT"
+    dockerCommand: sh scripts/start_app.sh
     healthCheckPath: /health
     envVars:
       - key: DATABASE_URL
@@ -40,8 +39,7 @@ services:
     env: docker
     dockerfilePath: ./app/Dockerfile
     dockerContext: .
-    dockerCommand: >-
-      sh -c "python -m http.server $PORT & python -m app.realtime.webrtc_agent dev"
+    dockerCommand: sh scripts/start_worker.sh
     envVars:
       - key: GROQ_API_KEY
         sync: false
