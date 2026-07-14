@@ -1,0 +1,52 @@
+databases:
+  - name: voice-medical-agent-db
+    plan: free
+    databaseName: medical_agent
+    user: medical_user
+
+services:
+  - type: web
+    name: voice-medical-agent-app
+    plan: free
+    env: docker
+    dockerfilePath: ./app/Dockerfile
+    dockerContext: .
+    dockerCommand: >-
+      sh -c "python -m uvicorn app.main:app --host 0.0.0.0 --port $PORT"
+    healthCheckPath: /health
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: voice-medical-agent-db
+          property: connectionString
+      - key: GROQ_API_KEY
+        sync: false
+      - key: LIVEKIT_URL
+        sync: false
+      - key: LIVEKIT_API_KEY
+        sync: false
+      - key: LIVEKIT_API_SECRET
+        sync: false
+      - key: ENVIRONMENT
+        value: production
+      - key: DEBUG
+        value: "false"
+      - key: LOG_LEVEL
+        value: INFO
+
+  - type: worker
+    name: voice-medical-agent-worker
+    plan: free
+    env: docker
+    dockerfilePath: ./app/Dockerfile
+    dockerContext: .
+    dockerCommand: python -m app.realtime.webrtc_agent dev
+    envVars:
+      - key: GROQ_API_KEY
+        sync: false
+      - key: LIVEKIT_URL
+        sync: false
+      - key: LIVEKIT_API_KEY
+        sync: false
+      - key: LIVEKIT_API_SECRET
+        sync: false

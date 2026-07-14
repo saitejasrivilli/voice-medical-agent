@@ -160,6 +160,10 @@ class PerformanceMetrics(Base):
 
 def init_db(database_url: str):
     """Initialize database and create tables."""
+    # Render (and some other providers) hand out postgres:// URLs, but
+    # SQLAlchemy's psycopg2 dialect requires the postgresql:// scheme.
+    if database_url.startswith("postgres://"):
+        database_url = database_url.replace("postgres://", "postgresql://", 1)
     engine = create_engine(
         database_url,
         echo=False,
