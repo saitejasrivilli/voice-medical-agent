@@ -32,34 +32,21 @@ class SpecialtyRouter:
         """
         self.confidence_threshold = confidence_threshold
         self.specialty_keywords = SPECIALTY_KEYWORDS
-    def _get_escalation(self, specialty, symptoms):
-         
-        if specialty == Specialty.CARDIOLOGY:
-            if symptoms.severity == "high":
-                return EscalationLevel.ER
-            return EscalationLevel.URGENT_OFFICE
-        
-        if specialty == Specialty.ORTHOPEDICS:
-            if symptoms.severity == "high":
-                return EscalationLevel.URGENT_OFFICE
-            return EscalationLevel.OFFICE
-        
-        return EscalationLevel.OFFICE
     def route(self, symptoms: SymptomExtraction) -> RoutingDecision:
         import pickle
-        
+
         # Load model
         with open("specialty_router_model.pkl", "rb") as f:
             clf, vectorizer = pickle.load(f)
-        
+
         # Prepare text
         text = f"{' '.join(symptoms.symptoms)} {symptoms.severity}"
-        
+
         # Predict
         vec = vectorizer.transform([text])
         specialty_str = clf.predict(vec)[0]
         confidence = clf.predict_proba(vec)[0].max()
-        
+
         # Map to enum
         specialty_map = {
             'cardiology': Specialty.CARDIOLOGY,
@@ -67,19 +54,31 @@ class SpecialtyRouter:
             'dermatology': Specialty.DERMATOLOGY,
             'general_triage': Specialty.GENERAL_TRIAGE,
         }
-        
+
         specialty = specialty_map.get(specialty_str, Specialty.GENERAL_TRIAGE)
-        
-        # Determine escalation
-        escalation_level = self._get_escalation(specialty, symptoms)
-        
+        reasoning = f"ML model prediction: {specialty_str} ({confidence:.1%})"
+
+        # Below-threshold predictions are too unreliable to commit to a
+        # specialty (e.g. a low-confidence "orthopedics" guess for a cold/flu
+        # complaint) - fall back to general triage instead of acting on them.
+        if confidence < self.confidence_threshold and specialty != Specialty.GENERAL_TRIAGE:
+            reasoning = (
+                f"ML model predicted {specialty_str} at {confidence:.1%}, "
+                f"below the {self.confidence_threshold:.0%} threshold - "
+                f"routed to general triage instead"
+            )
+            specialty = Specialty.GENERAL_TRIAGE
+
+        # Determine escalation using the specialty- and keyword-aware logic
+        escalation_level = self._determine_escalation(specialty, symptoms.severity, symptoms.symptoms)
+
         return RoutingDecision(
             specialty=specialty,
             confidence=confidence,
-            reasoning=f"ML model prediction: {specialty_str} ({confidence:.1%})",
+            reasoning=reasoning,
             escalation_level=escalation_level,
             requires_immediate_attention=escalation_level == EscalationLevel.ER
-    )
+        )
     def _calculate_specialty_scores(
         self,
         symptom_text: str,
