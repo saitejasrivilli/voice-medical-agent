@@ -9,6 +9,7 @@ import re
 from typing import Optional
 from src.core.models import SymptomExtraction
 from src.core.enums import Severity
+from src.config import settings
 
 logger = logging.getLogger(__name__)
 
@@ -65,15 +66,15 @@ Rules:
 """
 
         try:
-            response = self.client.messages.create(
-                model="mixtral-8x7b-32768",
+            response = self.client.chat.completions.create(
+                model=settings.groq_llm_model,
                 messages=[{"role": "user", "content": prompt}],
                 max_tokens=500,
                 temperature=0.3,
             )
-            
+
             # Parse JSON from response
-            response_text = response.content[0].text
+            response_text = response.choices[0].message.content
             
             # Try to extract JSON from response
             json_match = re.search(r'\{.*\}', response_text, re.DOTALL)

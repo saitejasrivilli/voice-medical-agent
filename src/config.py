@@ -25,6 +25,7 @@ class Settings(BaseSettings):
     groq_api_key: str = ""  # Required - must be set via env
     groq_timeout_seconds: int = 30
     groq_model: str = "whisper-large-v3"
+    groq_llm_model: str = "llama-3.3-70b-versatile"  # for symptom extraction (mixtral-8x7b was decommissioned)
 
     # TTS
     elevenlabs_api_key: str = ""  # optional - falls back to free gTTS if unset
